@@ -11,6 +11,7 @@
 В качестве ответа в репозиторий шаблона с решением добавьте скриншоты с настройками раннера в проекте.
 
 Ответ:
+![1-1](https://github.com/Zikin18/SYS-25_8.03/blob/master/1-1.png)
 
 ### Задание 2
 
@@ -25,3 +26,23 @@
  * скриншоты с успешно собранными сборками.
 
 Ответ:
+![2-1](https://github.com/Zikin18/SYS-25_8.03/blob/master/2-1.png)
+![2-2](https://github.com/Zikin18/SYS-25_8.03/blob/master/2-2.png)
+
+```yml
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  image: golang:1.17
+  script: 
+   - go test .
+
+build:
+  stage: build
+  image: docker:latest
+  script:
+   - docker build .
+```
